@@ -3,16 +3,18 @@
 $user=$_POST['user'];
 $pass=$_POST['pass'];
 
-var_dump($_GET);
-
 //ユーザー名とパスワードを確認する
 if( strcmp($user,'akira')===0 && strcmp($pass,12345)===0)
 {
+    setcookie("user",$user);
+    setcookie("pass",$pass);
     header('Location: item_list.php');
 }
 else
 {
-    header('Location: login_failed.html');
+    setcookie("user","");
+    setcookie("pass","");
+    header('Location: login_failed.php');
 }
 
 /*
