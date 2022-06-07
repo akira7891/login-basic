@@ -12,6 +12,7 @@ session_start();
 <body>
     <h1>ログインに失敗しました</h1>
     <a href="login.html">もう一度ログインしてみる</a>
+    <br><br>
     <?php var_dump($_SESSION)?>
     
 </body>
