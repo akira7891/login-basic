@@ -7,7 +7,7 @@ $user=$_COOKIE['user'];
 $pass=$_COOKIE['pass'];
 
 //ユーザー名とパスワードを確認する
-if( strcmp($user,'akira')!==0 && strcmp($pass,12345)!==0)
+if( strcmp($user,'akira')!==0 || strcmp($pass,12345)!==0)
 {
     setcookie("user","");
     setcookie("pass","");
