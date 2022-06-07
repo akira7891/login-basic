@@ -1,16 +1,17 @@
 <?php
+session_start();
 //キャッシュを無効にする
 header('Cache-Control:no-cache');
 
 //cookieの内容を取得する
-$user=$_COOKIE['user'];
-$pass=$_COOKIE['pass'];
+$user=$_SESSION['user'];
+$pass=$_SESSION['pass'];
 
 //ユーザー名とパスワードを確認する
 if( strcmp($user,'akira')!==0 || strcmp($pass,12345)!==0)
 {
-    setcookie("user","");
-    setcookie("pass","");
+    $_SESSION['user']="";
+    $_SESSION['pass']="";
     header('Location: login_failed.php');
     exit();
 };
@@ -26,7 +27,7 @@ if( strcmp($user,'akira')!==0 || strcmp($pass,12345)!==0)
 </head>
 <body>
     <h1>ログインに成功しました</h1>
-    <?php var_dump($_COOKIE)?>
+    <?php var_dump($_SESSION)?>
     
 </body>
 </html>

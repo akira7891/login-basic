@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //フォームに入力された内容を取得する
 $user=$_POST['user'];
 $pass=$_POST['pass'];
@@ -6,14 +8,14 @@ $pass=$_POST['pass'];
 //ユーザー名とパスワードを確認する
 if( strcmp($user,'akira')===0 && strcmp($pass,12345)===0)
 {
-    setcookie("user",$user);
-    setcookie("pass",$pass);
+    $_SESSION['user']=$user;
+    $_SESSION['pass']=$pass;
     header('Location: item_list.php');
 }
 else
 {
-    setcookie("user","");
-    setcookie("pass","");
+    $_SESSION['user']="";
+    $_SESSION['pass']="";
     header('Location: login_failed.php');
 }
 

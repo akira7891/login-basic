@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,7 +12,7 @@
 <body>
     <h1>ログインに失敗しました</h1>
     <a href="login.html">もう一度ログインしてみる</a>
-    <?php var_dump($_COOKIE)?>
+    <?php var_dump($_SESSION)?>
     
 </body>
 </html>
